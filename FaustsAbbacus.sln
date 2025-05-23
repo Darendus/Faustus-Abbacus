@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaustsAbbacus", "FaustsAbbacus.csproj", "{05697EC7-C2A8-4D37-A817-6820BAB81276}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05697EC7-C2A8-4D37-A817-6820BAB81276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05697EC7-C2A8-4D37-A817-6820BAB81276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05697EC7-C2A8-4D37-A817-6820BAB81276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05697EC7-C2A8-4D37-A817-6820BAB81276}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
