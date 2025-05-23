@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FaustsAbbacus"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Path of Exile Item Calculator" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <ComboBox x:Name="LeagueComboBox" 
+                      Width="200" 
+                      HorizontalAlignment="Left"
+                      Margin="0,0,0,10"
+                      SelectionChanged="LeagueComboBox_SelectionChanged"/>
+            <TextBox x:Name="ItemName"
+                             Width="300"
+                             HorizontalAlignment="Left"
+                             />
+            
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Amount Dropped:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox x:Name="AmountTextBox" 
+                         Width="100"
+                         TextChanged="AmountTextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Price per Item:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock x:Name="PriceTextBlock"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Total Value:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock x:Name="TotalValueTextBlock"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
