@@ -9,6 +9,7 @@ namespace FaustsAbbacus
         private string _name;
         private decimal _price;
         private int _amountDropped;
+        private string _itemtype;
 
         public string Name
         {
@@ -17,7 +18,8 @@ namespace FaustsAbbacus
             {
                 _name = value;
                 OnPropertyChanged();
-                // Hier könnte der API-Call zu poe.ninja erfolgen
+                //TODO:
+                // Hier könnte der API-Call zu poe.ninja erfolgen für Autocompletion
                 UpdatePriceFromApi();
             }
         }
@@ -45,12 +47,20 @@ namespace FaustsAbbacus
 
         public decimal TotalValue => Price * AmountDropped;
 
+        public string ItemType
+        {
+            get => _itemtype;
+            set
+            {
+                _itemtype = value;
+                OnPropertyChanged();
+            }
+        }
         private async void UpdatePriceFromApi()
         {
             // TODO: Implementierung des API-Calls zu poe.ninja
             // Dies sollte den Preis basierend auf der ausgewählten League updaten
         }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

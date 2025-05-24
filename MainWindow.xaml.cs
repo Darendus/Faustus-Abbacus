@@ -16,7 +16,7 @@ namespace FaustsAbbacus
             InitializeComponent();
             _poeNinjaService = new PoeNinjaService();
             _currentItem = new Item();
-
+            //TODO:
             // Leagues hinzufügen (diese sollten eigentlich auch von der API geholt werden)
             LeagueComboBox.Items.Add("Standard");
             LeagueComboBox.Items.Add("Settlers");
@@ -27,6 +27,7 @@ namespace FaustsAbbacus
         {
             if (_currentItem.Name != null)
             {
+                //TODO:
                 // Update Preis wenn League geändert wird
                 await UpdateItemPrice();
             }
@@ -34,6 +35,7 @@ namespace FaustsAbbacus
 
         private async void ItemNameAutoComplete_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //TODO:
             // Implementiere hier die Item-Suche/Autocomplete-Logik
             // Dies sollte die verfügbaren Items von poe.ninja abrufen
         }
@@ -49,10 +51,12 @@ namespace FaustsAbbacus
 
         private async Task UpdateItemPrice()
         {
+            string itemname = ItemName.SelectedText;
             string selectedLeague = LeagueComboBox.SelectedItem?.ToString();
+            string itemtype = ItemType.SelectedText;
             if (selectedLeague != null)
             {
-                decimal price = await _poeNinjaService.GetItemPrice(_currentItem.Name, selectedLeague);
+                decimal price = await _poeNinjaService.GetItemPrice(itemname, selectedLeague, itemtype);
                 // Update UI
                 PriceTextBlock.Text = price.ToString("N2");
                 UpdateDisplay();
